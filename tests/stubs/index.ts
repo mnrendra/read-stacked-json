@@ -1,5 +1,5 @@
-import * as main from './main'
+import filename from './filename'
 
 export {
-  main
+  filename
 }
