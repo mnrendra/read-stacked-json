@@ -1,7 +1,7 @@
 import { EXT } from '../consts'
 
 import mockedReadSync from '@tests/mocks/readSync'
-import unmockReadSync from '@tests/utils/unmockReadSync'
+import unmockReadSync from '@tests/unmocks/readSync'
 import filename from '@tests/stubs/filename'
 
 import index from '.'
