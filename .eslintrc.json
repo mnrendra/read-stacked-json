@@ -17,6 +17,7 @@
       "ignoreStrings": true
     }],
     "@typescript-eslint/strict-boolean-expressions": "off",
-    "@typescript-eslint/prefer-nullish-coalescing": "off"
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/no-unsafe-argument": "warn"
   }
 }

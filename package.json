@@ -1,7 +1,7 @@
 {
   "name": "@mnrendra/read-stacked-json",
   "version": "0.0.0-development",
-  "description": "Read the stacked json file from any sub-directory in your project.",
+  "description": "Read the stacked JSON file from any sub-directory in your project.",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,6 +25,10 @@
     "url": "https://github.com/mnrendra/read-stacked-json/issues"
   },
   "homepage": "https://github.com/mnrendra/read-stacked-json#readme",
+  "dependencies": {
+    "@mnrendra/read-stacked-file": "^1.0.0",
+    "json5": "^2.2.3"
+  },
   "devDependencies": {
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
