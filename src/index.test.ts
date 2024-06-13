@@ -2,8 +2,8 @@ import { EXT } from './consts'
 
 import mockedReadAsync from '@tests/mocks/readAsync'
 import mockedReadSync from '@tests/mocks/readSync'
-import unmockReadAsync from '@tests/utils/unmockReadAsync'
-import unmockReadSync from '@tests/utils/unmockReadSync'
+import unmockReadAsync from '@tests/unmocks/readAsync'
+import unmockReadSync from '@tests/unmocks/readSync'
 import filename from '@tests/stubs/filename'
 
 import { parseJSON, validateFilename } from './utils'
