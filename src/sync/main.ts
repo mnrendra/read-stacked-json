@@ -2,7 +2,7 @@ import type { JSONType, Options } from '../types'
 
 import { readSync } from '@mnrendra/read-stacked-file'
 
-import { parseJSON, validateFilename } from '../utils'
+import { parseJSON, validateFilename, validateSkippedStacks } from '../utils'
 
 /**
  * Parse obtained JSON file synchronously.
@@ -13,16 +13,21 @@ import { parseJSON, validateFilename } from '../utils'
 const main = <ParsedJSON extends JSONType = JSONType>(
   fileName: string,
   {
-    isJSON5
+    isJSON5,
+    skippedStacks
   }: Options = {
-    isJSON5: false
+    isJSON5: false,
+    skippedStacks: []
   }
 ): ParsedJSON => {
   // Validate filename.
   const validFileName = validateFilename(fileName)
 
+  // Validate skipped stacks.
+  const validSkippedStacks = validateSkippedStacks(skippedStacks)
+
   // Obtain file data.
-  const data = readSync(validFileName)
+  const data = readSync(validFileName, { skippedStacks: validSkippedStacks })
 
   // Parsing data into JSON.
   const parsedData = parseJSON(validFileName, data, isJSON5)
