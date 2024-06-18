@@ -4,7 +4,9 @@ import { EXT } from '../consts'
 
 /**
  * Validate filename.
+ *
  * @param {string} filename - Filename.
+ *
  * @returns {string} Valid filename.
  */
 const validateFilename = (

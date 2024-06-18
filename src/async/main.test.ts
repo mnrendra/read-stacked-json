@@ -1,7 +1,7 @@
 import { EXT } from '../consts'
 
 import mockedReadAsync from '@tests/mocks/readAsync'
-import unmockReadAsync from '@tests/utils/unmockReadAsync'
+import unmockReadAsync from '@tests/unmocks/readAsync'
 import filename from '@tests/stubs/filename'
 
 import main from './main'
@@ -57,6 +57,34 @@ describe('Test `main` async:', () => {
 
     it('Should resolve a parsed JSON5 object when given a filename and `isJSON5` param is set to `true`!', async () => {
       const received = await main(filename, { isJSON5: true })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should resolve a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given a string!', async () => {
+      const received = await main(filename, { isJSON5: false, skippedStacks: 'any' })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should resolve a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given a list of strings!', async () => {
+      const received = await main(filename, { isJSON5: false, skippedStacks: ['any'] })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should resolve a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given a string!', async () => {
+      const received = await main(filename, { isJSON5: true, skippedStacks: 'any' })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should resolve a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given a list of strings!', async () => {
+      const received = await main(filename, { isJSON5: true, skippedStacks: ['any'] })
       const expected = expect.any(Object)
 
       expect(received).toEqual(expected)

@@ -1,7 +1,7 @@
 import { EXT } from '../consts'
 
 import mockedReadSync from '@tests/mocks/readSync'
-import unmockReadSync from '@tests/utils/unmockReadSync'
+import unmockReadSync from '@tests/unmocks/readSync'
 import filename from '@tests/stubs/filename'
 
 import main from './main'
@@ -57,6 +57,34 @@ describe('Test `main` sync:', () => {
 
     it('Should return a parsed JSON5 object when given a filename and `isJSON5` param is set to `true`!', () => {
       const received = main(filename, { isJSON5: true })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should return a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given a string!', () => {
+      const received = main(filename, { isJSON5: false, skippedStacks: 'any' })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should return a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given a list of strings!', () => {
+      const received = main(filename, { isJSON5: false, skippedStacks: ['any'] })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should return a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given a string!', () => {
+      const received = main(filename, { isJSON5: true, skippedStacks: 'any' })
+      const expected = expect.any(Object)
+
+      expect(received).toEqual(expected)
+    })
+
+    it('Should return a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given a list of strings!', () => {
+      const received = main(filename, { isJSON5: true, skippedStacks: ['any'] })
       const expected = expect.any(Object)
 
       expect(received).toEqual(expected)
