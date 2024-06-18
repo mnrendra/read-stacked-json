@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/mnrendra/read-stacked-json#readme",
   "dependencies": {
-    "@mnrendra/read-stacked-file": "^1.0.0",
+    "@mnrendra/read-stacked-file": "^1.1.0",
+    "@mnrendra/validate-skipped-stacks": "^1.0.1",
     "json5": "^2.2.3"
   },
   "devDependencies": {

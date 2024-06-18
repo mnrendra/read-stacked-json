@@ -1,9 +1,8 @@
 import { EXT } from '../consts'
 
 import filename from '@tests/stubs/filename'
-import validSkippedStacks from '@tests/stubs/validSkippedStacks'
 
-import { parseJSON, validateFilename, validateSkippedStacks } from '.'
+import { parseJSON, validateFilename } from '.'
 
 describe('Test `index` utils:', () => {
   describe('Test `parseJSON` util:', () => {
@@ -56,29 +55,6 @@ describe('Test `index` utils:', () => {
       const expected = filename
 
       expect(received).toBe(expected)
-    })
-  })
-
-  describe('Test `validateSkippedStacks` util:', () => {
-    it('Should return the default value when given an empty argument!', () => {
-      const received = validateSkippedStacks()
-      const expected = validSkippedStacks()
-
-      expect(received).toEqual(expected)
-    })
-
-    it('Should return the default value with additional `skippedStacks` when given a `skippedStacks` option with a string!', () => {
-      const received = validateSkippedStacks('any')
-      const expected = [...validSkippedStacks(), 'any']
-
-      expect(received).toEqual(expected)
-    })
-
-    it('Should return the default value with additional `skippedStacks` when given a `skippedStacks` option with a list of strings!', () => {
-      const received = validateSkippedStacks(['any'])
-      const expected = [...validSkippedStacks(), 'any']
-
-      expect(received).toEqual(expected)
     })
   })
 })
