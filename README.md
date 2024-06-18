@@ -107,7 +107,7 @@ read('package.json')
 ```
 
 ## License
-[MIT](https://github.com/mnrendra/read-packag/blob/HEAD/LICENSE)
+[MIT](https://github.com/mnrendra/read-stacked-json/blob/HEAD/LICENSE)
 
 ## Author
 [@mnrendra](https://github.com/mnrendra)
