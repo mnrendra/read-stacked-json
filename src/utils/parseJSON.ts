@@ -2,9 +2,11 @@ import JSON5 from 'json5'
 
 /**
  * Parsing stringified-JSON.
+ *
  * @param {string} filename - Stringified-JSON filename.
  * @param {string} stringifiedJSON - Stringified-JSON.
  * @param {boolean} [isJSON5] - Is JSON5 param.
+ *
  * @returns {Record<string, any>} Parsed JSON.
  */
 const parseJSON = (
@@ -15,7 +17,7 @@ const parseJSON = (
   // Try-catch to handle parsing errors.
   try {
     // Parsing based on JSON type.
-    const parsedJSON = isJSON5
+    const parsedJSON = isJSON5 === true
       ? JSON5.parse(stringifiedJSON)
       : JSON.parse(stringifiedJSON)
 

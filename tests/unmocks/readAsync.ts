@@ -1,4 +1,5 @@
 import type readStackedFile from '@mnrendra/read-stacked-file'
+
 import type readAsync from '@tests/mocks/readAsync'
 
 type ReadStackedFile = typeof readStackedFile
