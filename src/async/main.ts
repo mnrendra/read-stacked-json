@@ -26,16 +26,16 @@ const main = async <ParsedJSON extends JSONType = JSONType>(
   }
 ): Promise<ParsedJSON> => {
   // Validate filename.
-  const validFileName = validateFilename(fileName)
+  const validFilename = validateFilename(fileName)
 
   // Validate skipped stacks.
   const validSkippedStacks = validateSkippedStacks(SKIPPED_STACK, skippedStacks)
 
   // Obtain file data.
-  const data = await read(validFileName, { skippedStacks: validSkippedStacks })
+  const data = await read(validFilename, { skippedStacks: validSkippedStacks })
 
   // Parsing data into JSON.
-  const parsedData = parseJSON(validFileName, data, isJSON5)
+  const parsedData = parseJSON(data, validFilename, isJSON5)
 
   // Return parsed data.
   return parsedData as ParsedJSON
