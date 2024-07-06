@@ -106,6 +106,22 @@ read('package.json')
   });
 ```
 
+## Utility
+```javascript
+import {
+  validateSkippedStacks // To validate the list of stacks to be skipped. More info: @mnrendra/validate-skipped-stacks
+} from '@mnrendra/read-stacked-json'
+```
+
+## Types
+```typescript
+import type {
+  Options, // @mnrendra/read-stacked-json options.
+  SkippedStacks, // @mnrendra/validate-skipped-stacks input.
+  ValidSkippedStacks // @mnrendra/validate-skipped-stacks output.
+} from '@mnrendra/read-stacked-json'
+```
+
 ## License
 [MIT](https://github.com/mnrendra/read-stacked-json/blob/HEAD/LICENSE)
 

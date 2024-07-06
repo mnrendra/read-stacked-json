@@ -25,5 +25,5 @@ const validateFilename = (
   return validFilename
 }
 
-// Export the `validateFilename` as the default value.
+// Export `validateFilename` as the default value.
 export default validateFilename
