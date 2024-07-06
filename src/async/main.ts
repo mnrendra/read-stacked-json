@@ -11,7 +11,7 @@ import { parseJSON, validateFilename } from '../utils'
  * Parse obtained JSON file asynchronously.
  *
  * @param {string} fileName - Targeted JSON file to be obtained.
- * @param {object} [options] - Optional params.
+ * @param {Options} [options] - Optional params.
  *
  * @returns {string} Obtained value.
  */
@@ -19,10 +19,12 @@ const main = async <ParsedJSON extends JSONType = JSONType>(
   fileName: string,
   {
     isJSON5,
-    skippedStacks
+    skippedStacks,
+    stackTraceLimit
   }: Options = {
     isJSON5: false,
-    skippedStacks: []
+    skippedStacks: [],
+    stackTraceLimit: 10
   }
 ): Promise<ParsedJSON> => {
   // Validate filename.
@@ -32,7 +34,10 @@ const main = async <ParsedJSON extends JSONType = JSONType>(
   const validSkippedStacks = validateSkippedStacks(SKIPPED_STACK, skippedStacks)
 
   // Obtain file data.
-  const data = await read(validFilename, { skippedStacks: validSkippedStacks })
+  const data = await read(validFilename, {
+    skippedStacks: validSkippedStacks,
+    stackTraceLimit
+  })
 
   // Parsing data into JSON.
   const parsedData = parseJSON(data, validFilename, isJSON5)
@@ -41,5 +46,5 @@ const main = async <ParsedJSON extends JSONType = JSONType>(
   return parsedData as ParsedJSON
 }
 
-// Export the `main` as the default value.
+// Export `main` as the default value.
 export default main
