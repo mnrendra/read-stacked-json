@@ -31,5 +31,5 @@ const parseJSON = (
   }
 }
 
-// Export the `parseJSON` as the default value.
+// Export `parseJSON` as the default value.
 export default parseJSON

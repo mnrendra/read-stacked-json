@@ -1,8 +1,9 @@
-import type { SkippedStacks } from '@mnrendra/validate-skipped-stacks'
+import type { SkippedStacks } from '.'
 
 interface Options {
   isJSON5?: boolean
   skippedStacks?: SkippedStacks
+  stackTraceLimit?: number
 }
 
 export default Options
