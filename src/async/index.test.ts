@@ -1,8 +1,8 @@
-import { EXT } from '../consts'
+import { EXT } from '@/consts'
 
+import filename from '@tests/dummies/filename'
 import mockedReadAsync from '@tests/mocks/readAsync'
 import unmockReadAsync from '@tests/unmocks/readAsync'
-import filename from '@tests/stubs/filename'
 
 import index from '.'
 

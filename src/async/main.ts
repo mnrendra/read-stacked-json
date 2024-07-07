@@ -1,7 +1,6 @@
 import type { JSONType, Options } from '../types'
 
-import { read } from '@mnrendra/read-stacked-file'
-import validateSkippedStacks from '@mnrendra/validate-skipped-stacks'
+import { read, validateSkippedStacks } from '@mnrendra/read-stacked-file'
 
 import { SKIPPED_STACK } from '../consts'
 

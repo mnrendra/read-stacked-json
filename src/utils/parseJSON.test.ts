@@ -1,4 +1,4 @@
-import filename from '@tests/stubs/filename'
+import filename from '@tests/dummies/filename'
 
 import parseJSON from './parseJSON'
 

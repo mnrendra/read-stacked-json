@@ -1,16 +1,14 @@
-import { EXT } from './consts'
+import { EXT } from '@/consts'
 
+import filename from '@tests/dummies/filename'
 import mockedReadAsync from '@tests/mocks/readAsync'
 import mockedReadSync from '@tests/mocks/readSync'
 import unmockReadAsync from '@tests/unmocks/readAsync'
 import unmockReadSync from '@tests/unmocks/readSync'
-import filename from '@tests/stubs/filename'
 
-import { parseJSON, validateFilename } from './utils'
+import { parseJSON, validateFilename } from '@/utils'
 
 import { read, readSync } from '.'
-
-jest.mock('@mnrendra/read-stacked-file')
 
 jest.mock('@mnrendra/read-stacked-file')
 
