@@ -1,15 +1,15 @@
-import type readStackedFile from '@mnrendra/read-stacked-file'
+import type originalModule from '@mnrendra/read-stacked-file'
 
-import type readSync from '@tests/mocks/readSync'
+import type mockedModule from '@tests/mocks/readSync'
 
-type ReadStackedFile = typeof readStackedFile
-type ReadSync = typeof readSync
+type OriginalModule = typeof originalModule
+type MockedModule = typeof mockedModule
 
-const unmockReadSync = (
-  mockedReadSync: ReadSync
+const unmock = (
+  mockedModule: MockedModule
 ): void => {
-  const { readSync }: ReadStackedFile = jest.requireActual('@mnrendra/read-stacked-file')
-  mockedReadSync.mockImplementation(readSync)
+  const actualModule: OriginalModule = jest.requireActual('@mnrendra/read-stacked-file')
+  mockedModule.mockImplementation(actualModule.readSync)
 }
 
-export default unmockReadSync
+export default unmock
