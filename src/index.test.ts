@@ -8,13 +8,9 @@ import unmockReadSync from '@tests/unmocks/readSync'
 
 import { parseJSON, validateFilename } from '@/utils'
 
-import { read, readSync, validateSkippedStacks } from '.'
+import { read, readSync } from '.'
 
-jest.mock('@mnrendra/read-stacked-file', () => ({
-  read: jest.fn(),
-  readSync: jest.fn(),
-  validateSkippedStacks: jest.fn()
-}))
+jest.mock('@mnrendra/read-stacked-file')
 
 describe('Test `index` utils:', () => {
   describe('Test `parseJSON` util:', () => {
@@ -237,29 +233,6 @@ describe('Test all features:', () => {
 
         expect(received).toEqual(expected)
       })
-    })
-  })
-
-  describe('Test `validateSkippedStacks` feature:', () => {
-    it('Should return a valid skipped-stacks when given a skipped-stack!', () => {
-      const received = validateSkippedStacks('any')
-      const expected = ['any']
-
-      expect(received).toEqual(expected)
-    })
-
-    it('Should return a valid skipped-stacks when given a skipped-stack and a `skippedStacks` option with a string!', () => {
-      const received = validateSkippedStacks('any', 'any')
-      const expected = ['any', 'any']
-
-      expect(received).toEqual(expected)
-    })
-
-    it('Should return a valid skipped-stacks when given a skipped-stack and a `skippedStacks` option with a list of strings!', () => {
-      const received = validateSkippedStacks('any', ['any'])
-      const expected = ['any', 'any']
-
-      expect(received).toEqual(expected)
     })
   })
 })

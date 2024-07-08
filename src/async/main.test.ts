@@ -6,10 +6,7 @@ import unmockReadAsync from '@tests/unmocks/readAsync'
 
 import main from './main'
 
-jest.mock('@mnrendra/read-stacked-file', () => ({
-  read: jest.fn(),
-  validateSkippedStacks: jest.fn()
-}))
+jest.mock('@mnrendra/read-stacked-file')
 
 describe('Test `main` async:', () => {
   describe('By mocking `readAsync` to resolve a non-JSON string:', () => {

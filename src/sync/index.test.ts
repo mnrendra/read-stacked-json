@@ -6,10 +6,7 @@ import unmockReadSync from '@tests/unmocks/readSync'
 
 import index from '.'
 
-jest.mock('@mnrendra/read-stacked-file', () => ({
-  readSync: jest.fn(),
-  validateSkippedStacks: jest.fn()
-}))
+jest.mock('@mnrendra/read-stacked-file')
 
 describe('Test `index` sync:', () => {
   describe('By mocking `readSync` to return a non-JSON string:', () => {
