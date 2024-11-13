@@ -2,15 +2,6 @@ import { basename } from 'node:path'
 
 import JSON5 from 'json5'
 
-/**
- * Parsing stringified-JSON.
- *
- * @param {string} stringifiedJSON - Stringified-JSON.
- * @param {string} filename - Stringified-JSON filename.
- * @param {boolean} [isJSON5] - Is JSON5 param.
- *
- * @returns {Record<string, any>} Parsed JSON.
- */
 const parseJSON = (
   stringifiedJSON: string,
   filename: string,
@@ -31,5 +22,4 @@ const parseJSON = (
   }
 }
 
-// Export `parseJSON` as the default value.
 export default parseJSON

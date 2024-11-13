@@ -1,4 +1,4 @@
-import type { SkippedStacks } from '.'
+import type { SkippedStacks } from '@mnrendra/read-stacked-file'
 
 interface Options {
   /**
@@ -9,7 +9,7 @@ interface Options {
   isJSON5?: boolean
 
   /**
-   * To skip a stack or a list of stacks when you call `@mnrendra/stack-trace`
+   * To skip a stack or a list of stacks when you call `@mnrendra/read-stacked-file`
    * or `@mnrendra/read-stacked-file`. So, you can get the stack(s) of your
    * consumer target file.
    *
@@ -20,12 +20,12 @@ interface Options {
   skippedStacks?: SkippedStacks
 
   /**
-   * `@mnrendra/stack-trace`'s limit specifies the number of stack frames to be
+   * `@mnrendra/read-stacked-file`'s limit specifies the number of stack frames to be
    * collected by a stack trace.
    *
    * @default 10
    *
-   * @see https://github.com/mnrendra/stack-trace
+   * @see https://github.com/mnrendra/read-stacked-file
    */
   stackTraceLimit?: number
 }

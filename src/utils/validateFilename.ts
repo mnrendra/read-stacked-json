@@ -2,13 +2,6 @@ import { parse } from 'node:path'
 
 import { EXT } from '../consts'
 
-/**
- * Validate filename.
- *
- * @param {string} filename - Filename.
- *
- * @returns {string} Valid filename.
- */
 const validateFilename = (
   filename: string
 ): string => {
@@ -25,5 +18,4 @@ const validateFilename = (
   return validFilename
 }
 
-// Export `validateFilename` as the default value.
 export default validateFilename
