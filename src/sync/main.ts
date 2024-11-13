@@ -7,24 +7,22 @@ import { SKIPPED_STACK } from '../consts'
 import { parseJSON, validateFilename } from '../utils'
 
 /**
- * Parse obtained JSON file synchronously.
+ * Parse the stacked JSON file synchronously.
  *
  * @param {string} fileName - Targeted JSON file to be obtained.
  * @param {Options} [options] - Optional params.
  *
- * @returns {string} Obtained value.
+ * @returns {Record<string, any>} Obtained value.
+ *
+ * @see https://github.com/mnrendra/read-stacked-json#readme
  */
 const main = <ParsedJSON extends JSONType = JSONType>(
   fileName: string,
   {
-    isJSON5,
-    skippedStacks,
-    stackTraceLimit
-  }: Options = {
-    isJSON5: false,
-    skippedStacks: [],
-    stackTraceLimit: 10
-  }
+    isJSON5 = false,
+    skippedStacks = [],
+    stackTraceLimit = 10
+  }: Options = {}
 ): ParsedJSON => {
   // Validate filename.
   const validFilename = validateFilename(fileName)
@@ -45,5 +43,4 @@ const main = <ParsedJSON extends JSONType = JSONType>(
   return parsedData as ParsedJSON
 }
 
-// Export `main` as the default value.
 export default main
