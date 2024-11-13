@@ -28,6 +28,13 @@ interface Options {
    * @see https://github.com/mnrendra/read-stacked-file
    */
   stackTraceLimit?: number
+
+  /**
+   * If set to `true`, it will use `process.cwd()` instead of `@mnrendra/read-stacked-file` to get the target path.
+   * 
+   * @default false
+   */
+  useCWD?: boolean
 }
 
 export default Options

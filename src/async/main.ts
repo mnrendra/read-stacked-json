@@ -21,7 +21,8 @@ const main = async <ParsedJSON extends JSONType = JSONType>(
   {
     isJSON5 = false,
     skippedStacks = [],
-    stackTraceLimit = 10
+    stackTraceLimit = 10,
+    useCWD = false
   }: Options = {}
 ): Promise<ParsedJSON> => {
   // Validate filename.
@@ -33,7 +34,8 @@ const main = async <ParsedJSON extends JSONType = JSONType>(
   // Obtain file data.
   const data = await read(validFilename, {
     skippedStacks: validSkippedStacks,
-    stackTraceLimit
+    stackTraceLimit,
+    useCWD
   })
 
   // Parsing data into JSON.
