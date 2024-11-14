@@ -55,43 +55,57 @@ describe('Test all features:', () => {
         expect(received).toEqual(expected)
       })
 
-      it('Should resolve a parsed JSON object when given a filename and `isJSON5` param is set to `false`!', async () => {
+      it('Should resolve a parsed JSON object when given a filename and `isJSON5` option is set to `false`!', async () => {
         const received = await read(filename, { isJSON5: false })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should resolve a parsed JSON5 object when given a filename and `isJSON5` param is set to `true`!', async () => {
+      it('Should resolve a parsed JSON5 object when given a filename and `isJSON5` option is set to `true`!', async () => {
         const received = await read(filename, { isJSON5: true })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should resolve a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given a string!', async () => {
+      it('Should resolve a parsed JSON object when given a filename, `isJSON5` option is set to `false`, and `skippedStacks` option is given a string!', async () => {
         const received = await read(filename, { isJSON5: false, skippedStacks: 'any' })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should resolve a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given an array of strings!', async () => {
+      it('Should resolve a parsed JSON object when given a filename, `isJSON5` option is set to `false`, and `skippedStacks` option is given an array of strings!', async () => {
         const received = await read(filename, { isJSON5: false, skippedStacks: ['any'] })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should resolve a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given a string!', async () => {
+      it('Should resolve a parsed JSON5 object when given a filename, `isJSON5` option is set to `true`, and `skippedStacks` option is given a string!', async () => {
         const received = await read(filename, { isJSON5: true, skippedStacks: 'any' })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should resolve a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given an array of strings!', async () => {
+      it('Should resolve a parsed JSON5 object when given a filename, `isJSON5` option is set to `true`, and `skippedStacks` option is given an array of strings!', async () => {
         const received = await read(filename, { isJSON5: true, skippedStacks: ['any'] })
+        const expected = expect.any(Object)
+
+        expect(received).toEqual(expected)
+      })
+
+      it('Should resolve a parsed JSON object when given a filename and `useCWD` option is set to `true`!', async () => {
+        const received = await read(filename, { useCWD: true })
+        const expected = expect.any(Object)
+
+        expect(received).toEqual(expected)
+      })
+
+      it('Should resolve a parsed JSON5 object when given a filename, `isJSON5` option is set to `true`, and `useCWD` option is set to `true`!', async () => {
+        const received = await read(filename, { isJSON5: true, useCWD: true })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
@@ -139,43 +153,57 @@ describe('Test all features:', () => {
         expect(received).toEqual(expected)
       })
 
-      it('Should return a parsed JSON object when given a filename and `isJSON5` param is set to `false`!', () => {
+      it('Should return a parsed JSON object when given a filename and `isJSON5` paroptionam is set to `false`!', () => {
         const received = readSync(filename, { isJSON5: false })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should return a parsed JSON5 object when given a filename and `isJSON5` param is set to `true`!', () => {
+      it('Should return a parsed JSON5 object when given a filename and `isJSON5` option is set to `true`!', () => {
         const received = readSync(filename, { isJSON5: true })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should return a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given a string!', () => {
+      it('Should return a parsed JSON object when given a filename, `isJSON5` option is set to `false`, and `skippedStacks` option is given a string!', () => {
         const received = readSync(filename, { isJSON5: false, skippedStacks: 'any' })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should return a parsed JSON object when given a filename, `isJSON5` param is set to `false`, and `skippedStacks` param is given a list of strings!', () => {
+      it('Should return a parsed JSON object when given a filename, `isJSON5` option is set to `false`, and `skippedStacks` option is given a list of strings!', () => {
         const received = readSync(filename, { isJSON5: false, skippedStacks: ['any'] })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should return a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given a string!', () => {
+      it('Should return a parsed JSON5 object when given a filename, `isJSON5` option is set to `true`, and `skippedStacks` option is given a string!', () => {
         const received = readSync(filename, { isJSON5: true, skippedStacks: 'any' })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)
       })
 
-      it('Should return a parsed JSON5 object when given a filename, `isJSON5` param is set to `true`, and `skippedStacks` param is given a list of strings!', () => {
+      it('Should return a parsed JSON5 object when given a filename, `isJSON5` option is set to `true`, and `skippedStacks` option is given a list of strings!', () => {
         const received = readSync(filename, { isJSON5: true, skippedStacks: ['any'] })
+        const expected = expect.any(Object)
+
+        expect(received).toEqual(expected)
+      })
+
+      it('Should return a parsed JSON object when given a filename and `useCWD` option is set to `true`!', () => {
+        const received = readSync(filename, { useCWD: true })
+        const expected = expect.any(Object)
+
+        expect(received).toEqual(expected)
+      })
+
+      it('Should return a parsed JSON5 object when given a filename, `isJSON5` option is set to `true`, and `useCWD` option is set to `true`!', () => {
+        const received = readSync(filename, { isJSON5: true, useCWD: true })
         const expected = expect.any(Object)
 
         expect(received).toEqual(expected)

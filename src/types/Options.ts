@@ -1,38 +1,46 @@
 import type { SkippedStacks } from '@mnrendra/read-stacked-file'
 
+/**
+ * The options interface.
+ *
+ * @see https://github.com/mnrendra/read-stacked-json#readme
+ */
 interface Options {
   /**
    * To tell the parser to parse using native `JSON` or `JSON5`.
    *
    * @default false
+   *
+   * @see https://github.com/mnrendra/read-stacked-json#readme
    */
   isJSON5?: boolean
 
   /**
-   * To skip a stack or a list of stacks when you call `@mnrendra/read-stacked-file`
-   * or `@mnrendra/read-stacked-file`. So, you can get the stack(s) of your
-   * consumer target file.
+   * A name or a list of names of stack traces that need to be skipped.
    *
    * @default []
    *
-   * @see https://github.com/mnrendra/validate-skipped-stacks
+   * @see https://github.com/mnrendra/read-stacked-json#readme
    */
   skippedStacks?: SkippedStacks
 
   /**
-   * `@mnrendra/read-stacked-file`'s limit specifies the number of stack frames to be
-   * collected by a stack trace.
+   * The `Error.stackTraceLimit` property specifies the number of stack frames
+   * to be collected by a stack trace.
    *
    * @default 10
    *
-   * @see https://github.com/mnrendra/read-stacked-file
+   * @see https://github.com/mnrendra/read-stacked-json#readme
    */
   stackTraceLimit?: number
 
   /**
-   * If set to `true`, it will use `process.cwd()` instead of `@mnrendra/read-stacked-file` to get the target path.
-   * 
+   * If set to `true`, it will use `process.cwd()` instead of
+   * `@mnrendra/stack-trace` to get the target path.
+   *
    * @default false
+   *
+   * @see https://github.com/mnrendra/read-stacked-json#readme
    */
   useCWD?: boolean
 }
